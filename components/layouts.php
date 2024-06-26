@@ -17,7 +17,8 @@
         include('header.php');
     ?>
     <div class="container" style="margin-top: 3rem;">
-      <button type="button" class="btn btn-success">Tambah Data</button>
+      <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#addPatient">Tambah Data</button>
+      <?php include('tambahModal.php'); ?>
       <?php include('section1.php'); ?>
     </div>
     <script src="../bootstrap/js/bootstrap.bundle.min.js"></script>

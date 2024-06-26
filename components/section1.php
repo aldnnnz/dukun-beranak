@@ -5,7 +5,7 @@
                 <th>Pasien</th>
                 <th>Keluhan</th>
                 <th>Diagnosa</th>
-                <th>Tindakan</th>
+                <th>Tanggal</th>
                 <th>Obat</th>
                 <th>Dokter</th>
                 <th>Action</th>
@@ -13,7 +13,7 @@
         </thead>
         <tbody>
             <?php  
-                include ('../config/db.php');
+                include ('./config/db.php');
                 $db = new database();
                 $no = 1;
                 foreach($db->getAllPerawatan() as $a){
@@ -23,7 +23,7 @@
                 <td><?= $a['nama_pasien']; ?></td>
                 <td><?= $a['keluhan']; ?></td>
                 <td><?= $a['diagnosa']; ?></td>
-                <td><?= $a['tindakan']; ?></td>
+                <td><?= $a['tanggal_perawatan']; ?></td>
                 <td><?= $a['obat']; ?></td>
                 <td><?= $a['nama_dokter']; ?></td>
                 <td>

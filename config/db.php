@@ -11,17 +11,18 @@ class database
     function getAllPerawatan()
     {
         $data = $this->conn->query("
-            SELECT
-              P.nama_pasien,
-              Perawatan.perawatan_id,
-              Perawatan.keluhan,
-              Perawatan.diagnosa,
-              Perawatan.tindakan,
-              Perawatan.obat,
-              D.nama_dokter
-            FROM Perawatan
-            JOIN Pasien P ON Perawatan.pasien_id = P.pasien_id
-            JOIN Dokter D ON Perawatan.dokter_id = D.dokter_id;
+           SELECT 
+            p.nama_pasien,
+            p.keluhan,
+            p.diagnosa,
+            p.tanggal_perawatan,
+            p.obat,
+            d.nama_dokter,
+            d.spesialisasi
+            FROM 
+            Pasien p
+            JOIN 
+            Dokter d ON p.dokter_id = d.dokter_id;
             ");
         $hasil = array();
         while ($d = $data->fetch_assoc()) {
